@@ -13,7 +13,7 @@ import {
   MatRowDef,
   MatTable
 } from '@angular/material/table';
-import {CurrencyPipe, DatePipe} from '@angular/common';
+import {CurrencyPipe, DatePipe, NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-candle-stick-table',
@@ -30,7 +30,8 @@ import {CurrencyPipe, DatePipe} from '@angular/common';
     MatHeaderRowDef,
     MatRowDef,
     DatePipe,
-    CurrencyPipe
+    CurrencyPipe,
+    NgClass
   ],
   templateUrl: './candle-stick-table.component.html',
   styleUrl: './candle-stick-table.component.css'
