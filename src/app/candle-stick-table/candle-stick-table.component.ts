@@ -13,7 +13,7 @@ import {
   MatRowDef,
   MatTable
 } from '@angular/material/table';
-import {CurrencyPipe, DatePipe, NgClass} from '@angular/common';
+import {CurrencyPipe, DatePipe, DecimalPipe, NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-candle-stick-table',
@@ -31,14 +31,15 @@ import {CurrencyPipe, DatePipe, NgClass} from '@angular/common';
     MatRowDef,
     DatePipe,
     CurrencyPipe,
-    NgClass
+    NgClass,
+    DecimalPipe
   ],
   templateUrl: './candle-stick-table.component.html',
   styleUrl: './candle-stick-table.component.css'
 })
 export class CandleStickTableComponent implements OnInit {
   public candleStickData: CandleStickPoint[] = []
-  displayedColumns: string[] = ['time', 'open', 'close', 'high', 'low', 'sumVolume'];
+  displayedColumns: string[] = ['time', 'open', 'high', 'low', 'close', 'sumVolume'];
 
   constructor(private sharedService: SharedService) {
   }

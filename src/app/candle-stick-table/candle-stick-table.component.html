@@ -1,37 +1,38 @@
 @if (candleStickData.length > 0) {
+  @let numberFormat = '1.5-5' ;
+  @let dateFormat = 'yyyy-MM-dd HH:mm' ;
+
   <table mat-table [dataSource]="candleStickData" class="mat-elevation-z8">
 
     <ng-container matColumnDef="time">
       <th mat-header-cell *matHeaderCellDef> Time</th>
-      <td mat-cell *matCellDef="let record"> {{ record.time | date :'yyyy-MM-dd HH:mm' }}</td>
+      <td mat-cell *matCellDef="let record"> {{ record.time | date : dateFormat }}</td>
     </ng-container>
 
 
     <ng-container matColumnDef="open">
       <th mat-header-cell *matHeaderCellDef> Open</th>
-      <td mat-cell *matCellDef="let record"> {{ record.open }}</td>
+      <td mat-cell *matCellDef="let record"> {{ record.open  | number: numberFormat }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="high">
+      <th mat-header-cell *matHeaderCellDef> High</th>
+      <td mat-cell *matCellDef="let record"> {{ record.high  | number: numberFormat }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="low">
+      <th mat-header-cell *matHeaderCellDef> Low</th>
+      <td mat-cell *matCellDef="let record"> {{ record.low | number: numberFormat }}</td>
     </ng-container>
 
     <ng-container matColumnDef="close">
       <th mat-header-cell *matHeaderCellDef> Close</th>
-      <td mat-cell *matCellDef="let record"> {{ record.close }}</td>
-    </ng-container>
-
-
-    <ng-container matColumnDef="high">
-      <th mat-header-cell *matHeaderCellDef> High</th>
-      <td mat-cell *matCellDef="let record"> {{ record.high }}</td>
-    </ng-container>
-
-
-    <ng-container matColumnDef="low">
-      <th mat-header-cell *matHeaderCellDef> Low</th>
-      <td mat-cell *matCellDef="let record"> {{ record.low }}</td>
+      <td mat-cell *matCellDef="let record"> {{ record.close  | number: numberFormat }}</td>
     </ng-container>
 
     <ng-container matColumnDef="sumVolume">
       <th mat-header-cell *matHeaderCellDef> Sum Volume</th>
-      <td mat-cell *matCellDef="let record"> {{ record.sumVolume }}</td>
+      <td mat-cell *matCellDef="let record"> {{ record.sumVolume | number }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
