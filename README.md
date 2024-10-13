@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Deploy to gh Pages
+
+```bash
+ng build --configuration production --base-href "https://o-khytrov.github.io/FluentCandleStick/"
+```
+
+```bash
+npx angular-cli-ghpages --dir=dist/fluent-candle-stick/browser --no-silent
+
+```
